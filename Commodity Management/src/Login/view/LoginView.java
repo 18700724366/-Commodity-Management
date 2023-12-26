@@ -15,11 +15,11 @@ public class LoginView {
 	private static CommodityDAO dd=new CommodityDAOJdbcImpl();
 	private static UsersDAO ud=new UsersDAOJdbcImpl();
 	public static void menu() {
-		System.out.println("»¶Ó­À´µ½ÎÒµÄÉÌ³Ç");
-	System.out.println("1¡¢ÓÃ»§×¢²á");
-	System.out.println("2¡¢ÓÃ»§µÇÂ¼");
-	System.out.println("3¡¢ÓÃ»§×¢Ïú");
-	System.out.println("0¡¢ÍË³öÏµÍ³");
+		System.out.println("æ¬¢è¿æ¥åˆ°æˆ‘çš„å•†åŸ");
+	System.out.println("1ã€ç”¨æˆ·æ³¨å†Œ");
+	System.out.println("2ã€ç”¨æˆ·ç™»å½•");
+	System.out.println("3ã€ç”¨æˆ·æ³¨é”€");
+	System.out.println("0ã€é€€å‡ºç³»ç»Ÿ");
 	int select = new Scanner(System.in).nextInt();
 	switch (select) {
 	case 1:
@@ -42,10 +42,10 @@ public class LoginView {
 }
 
 	private static void printHead() {
-		System.out.println("ÉÌÆ·±àºÅ\tÉÌÆ·Ãû³Æ\tÉÌÆ·ÊıÁ¿\tÉÌÆ·¼Û¸ñ");
+		System.out.println("å•†å“ç¼–å·\tå•†å“åç§°\tå•†å“æ•°é‡\tå•†å“ä»·æ ¼");
 	}
 	private static void printHeads() {
-		System.out.println("ÓÃ»§Ãû³Æ\tÓÃ»§Óà¶î");
+		System.out.println("ç”¨æˆ·åç§°\tç”¨æˆ·ä½™é¢");
 	}
 	
 	private static void printCommodity(Commodity commodity,int index) {
@@ -58,35 +58,33 @@ public class LoginView {
 		System.out.println(one.getUname()+"\t"+one.getBalance());
 	}
 	
-	private static void AddView() {			//×¢²áÓÃ»§
-		// TODO Auto-generated method stub
+	private static void AddView() {			//æ³¨å†Œç”¨æˆ·
 		try {
-			System.out.println("ÇëÊäÈëÓÃ»§êÇ³Æ£º");
+			System.out.println("è¯·è¾“å…¥ç”¨æˆ·æ˜µç§°ï¼š");
 			String name=new Scanner(System.in).next();
-			System.out.println("ÇëÊäÈëÓÃ»§ÃÜÂë£º");
+			System.out.println("è¯·è¾“å…¥ç”¨æˆ·å¯†ç ï¼š");
 			String password=new Scanner(System.in).next();
-			System.out.println("ÇëÊäÈë³äÖµ½ğ¶î£º");
+			System.out.println("è¯·è¾“å…¥å……å€¼é‡‘é¢ï¼š");
 			Double price=new Scanner(System.in).nextDouble();
 			Users users=new Users(name,password,0, price);
 			boolean b = ud.add(users);
 			
 			if(b) {
-				System.out.println("×¢²á³É¹¦");
-				System.out.println("ÄúµÄÓÃ»§idÎª"+ud.findid(users));
+				System.out.println("æ³¨å†ŒæˆåŠŸ");
+				System.out.println("æ‚¨çš„ç”¨æˆ·idä¸º"+ud.findid(users));
 			}else {
-				System.out.println("×¢²áÊ§°Ü");
+				System.out.println("æ³¨å†Œå¤±è´¥");
 			}
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
 
 	}
-	private static void LoginView() {			//ÓÃ»§µÇÂ¼
-		// TODO Auto-generated method stub
+	private static void LoginView() {			//ç”¨æˆ·ç™»å½•
 		Users users = new Users();
-		System.out.println("ÇëÊäÈëÓÃ»§id£º");
+		System.out.println("è¯·è¾“å…¥ç”¨æˆ·idï¼š");
 		int uid = new Scanner(System.in).nextInt();
-		System.out.println("ÇëÊäÈëÓÃ»§ÃÜÂë£º");
+		System.out.println("è¯·è¾“å…¥ç”¨æˆ·å¯†ç ï¼š");
 		String password = new Scanner(System.in).next();
 		users.setUid(uid);
 		users.setPassword(password);
@@ -94,36 +92,24 @@ public class LoginView {
 		if(b) {
 			Users one = ud.findOne(uid);
 			String uname = one.getUname();
-			System.out.println("µÇÂ¼³É¹¦"+uname+"£¬ÒÔÏÂÎªÄúµÄĞÅÏ¢");
+			System.out.println("ç™»å½•æˆåŠŸ"+uname+"ï¼Œä»¥ä¸‹ä¸ºæ‚¨çš„ä¿¡æ¯");
 			printHeads();
 			printUsersss(users,2);
 			UserView.menu(users);
 		}else {
-			System.out.println("ÕËºÅÃÜÂë´íÎó");
+			System.out.println("è´¦å·å¯†ç é”™è¯¯");
 			menu();
 		}
-		
-//		Users users=ud.findOne(uid);
-//		if(users!=null) {
-//			System.out.println("µÇÂ¼³É¹¦£¬"+users.getUname()+"»¶Ó­Äú"+"ÒÔÏÂÎªÄúµÄĞÅÏ¢");
-//			printHeads();
-//			printUsers(users,1);
-//			UserView uv=new UserView();
-//			uv.menu(users);
-//		}else {
-//			System.out.println("ÄúÊäÈëµÄÓÃ»§id²»´æÔÚ");
-//		}
 	}
 	
-	private static void DeleteView() {			//ÓÃ»§×¢Ïú
-		// TODO Auto-generated method stub
-		System.out.println("±àºÅ£º");
+	private static void DeleteView() {			//ç”¨æˆ·æ³¨é”€
+		System.out.println("ç¼–å·ï¼š");
 		int uid=new Scanner(System.in).nextInt();
 		boolean b = ud.delete(uid);
 		if(b) {
-			System.out.println("×¢Ïú³É¹¦");
+			System.out.println("æ³¨é”€æˆåŠŸ");
 		}else {
-			System.out.println("×¢ÏúÊ§°Ü");
+			System.out.println("æ³¨é”€å¤±è´¥");
 		}
 	}
 }

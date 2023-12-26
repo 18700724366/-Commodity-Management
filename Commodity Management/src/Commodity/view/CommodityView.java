@@ -23,16 +23,16 @@ public class CommodityView {
 	private static UsersDAO ud=new UsersDAOJdbcImpl();
 
 	public static void menu() {
-		System.out.println("----»¶Ó­À´µ½ºóÌ¨¹ÜÀí----");
-		System.out.println("1¡¢Ìí¼ÓÉÌÆ·");
-		System.out.println("2¡¢ÉÌÆ·ĞŞ¸Ä");
-		System.out.println("3¡¢ÉÌÆ·É¾³ı");
-		System.out.println("4¡¢²éÕÒÒ»¸öÉÌÆ·");
-		System.out.println("5¡¢²éÕÒËùÓĞÉÌÆ·");
-		System.out.println("6¡¢²éÕÒÒ»¸öÓÃ»§ĞÅÏ¢");
-		System.out.println("7¡¢²éÕÒËùÓĞÓÃ»§ĞÅÏ¢");
-		System.out.println("8¡¢¹ÜÀíÓÃ»§ĞÅÏ¢");
-		System.out.println("0¡¢ÍË³öÏµÍ³");
+		System.out.println("----æ¬¢è¿æ¥åˆ°åå°ç®¡ç†----");
+		System.out.println("1ã€æ·»åŠ å•†å“");
+		System.out.println("2ã€å•†å“ä¿®æ”¹");
+		System.out.println("3ã€å•†å“åˆ é™¤");
+		System.out.println("4ã€æŸ¥æ‰¾ä¸€ä¸ªå•†å“");
+		System.out.println("5ã€æŸ¥æ‰¾æ‰€æœ‰å•†å“");
+		System.out.println("6ã€æŸ¥æ‰¾ä¸€ä¸ªç”¨æˆ·ä¿¡æ¯");
+		System.out.println("7ã€æŸ¥æ‰¾æ‰€æœ‰ç”¨æˆ·ä¿¡æ¯");
+		System.out.println("8ã€ç®¡ç†ç”¨æˆ·ä¿¡æ¯");
+		System.out.println("0ã€é€€å‡ºç³»ç»Ÿ");
 		int select = new Scanner(System.in).nextInt();
 		switch (select) {
 		case 1:
@@ -70,10 +70,10 @@ public class CommodityView {
 	}
 
 	private static void printHead() {
-		System.out.println("ÉÌÆ·±àºÅ\tÉÌÆ·Ãû³Æ\tÉÌÆ·ÊıÁ¿\tÉÌÆ·¼Û¸ñ");
+		System.out.println("å•†å“ç¼–å·\tå•†å“åç§°\tå•†å“æ•°é‡\tå•†å“ä»·æ ¼");
 	}
 	private static void printHeadss() {
-		System.out.println("ÓÃ»§±àºÅ\tÓÃ»§êÇ³Æ\tÓÃ»§ÃÜÂë\tÓÃ»§¹ºÂò´ÎÊı\tÓÃ»§Óà¶î");
+		System.out.println("ç”¨æˆ·ç¼–å·\tç”¨æˆ·æ˜µç§°\tç”¨æˆ·å¯†ç \tç”¨æˆ·è´­ä¹°æ¬¡æ•°\tç”¨æˆ·ä½™é¢");
 	}
 	
 	private static void printCommodity(Commodity commodity,int index) {
@@ -87,28 +87,28 @@ public class CommodityView {
 		// TODO Auto-generated method stub
 		try {
 			Users users=new Users();
-			System.out.println("ÇëÊäÈëĞèÒª¹ÜÀíµÄÓÃ»§ID");
+			System.out.println("è¯·è¾“å…¥éœ€è¦ç®¡ç†çš„ç”¨æˆ·ID");
 			int uid = new Scanner(System.in).nextInt();
 			users.setUid(uid); 
-			System.out.println("ÊÇ·ñ¸ü¸ÄêÇ³Æ");
+			System.out.println("æ˜¯å¦æ›´æ”¹æ˜µç§°");
 			String  ss = new Scanner(System.in).next();
 			if(ss.equalsIgnoreCase("y")) {
-				System.out.println("êÇ³Æ£º");
+				System.out.println("æ˜µç§°ï¼š");
 				String uname = new Scanner(System.in).next();
 				users.setUname(uname);
 			}
-			System.out.println("ÊÇ·ñ¸ü¸ÄÓà¶î");
+			System.out.println("æ˜¯å¦æ›´æ”¹ä½™é¢");
 			ss = new Scanner(System.in).next();
 			if(ss.equalsIgnoreCase("y")) {
-				System.out.println("½ğ¶î£º");
+				System.out.println("é‡‘é¢ï¼š");
 				Double balance  = new Scanner(System.in).nextDouble();
 				users.setBalance(balance);
 			}
 			boolean b = ud.update(users);
 			if(b) {
-				System.out.println("ĞŞ¸Ä³É¹¦");
+				System.out.println("ä¿®æ”¹æˆåŠŸ");
 			}else {
-			System.out.println("ĞŞ¸ÄÊ§°Ü");
+			System.out.println("ä¿®æ”¹å¤±è´¥");
 			}
 			}catch (Exception e) {
 				e.printStackTrace();
@@ -118,14 +118,14 @@ public class CommodityView {
 	
 	private static void FindoneUserView() {
 		// TODO Auto-generated method stub
-		System.out.println("ÓÃ»§±àºÅ£º");
+		System.out.println("ç”¨æˆ·ç¼–å·ï¼š");
 		int uid=new Scanner(System.in).nextInt();
 		Users users=ud.findOne(uid);
 		if(users!=null) {
 			printHeadss();
 			printUsers(users,1);
 		}else {
-			System.out.println("ÄúÊäÈëµÄuid²»´æÔÚ");
+			System.out.println("æ‚¨è¾“å…¥çš„uidä¸å­˜åœ¨");
 		}
 		
 	}
@@ -150,14 +150,14 @@ public class CommodityView {
 
 	private static void FindOneView() {
 		// TODO Auto-generated method stub
-		System.out.println("±àºÅ£º");
+		System.out.println("ç¼–å·ï¼š");
 		int id=new Scanner(System.in).nextInt();
 		Commodity commodity=dd.findOne(id);
 		if(commodity!=null) {
 			printHead();
 			printCommodity(commodity,1);
 		}else {
-			System.out.println("ÄúÊäÈëµÄid²»´æÔÚ");
+			System.out.println("æ‚¨è¾“å…¥çš„idä¸å­˜åœ¨");
 		}
 		
 	}
@@ -165,48 +165,48 @@ public class CommodityView {
 
 	private static void DeleteView() {
 		// TODO Auto-generated method stub
-		System.out.println("±àºÅ£º");
+		System.out.println("ç¼–å·ï¼š");
 		int id=new Scanner(System.in).nextInt();
 		boolean b = dd.delete(id);
 		if(b) {
-			System.out.println("É¾³ı³É¹¦");
+			System.out.println("åˆ é™¤æˆåŠŸ");
 		}else {
-			System.out.println("É¾³ıÊ§°Ü");
+			System.out.println("åˆ é™¤å¤±è´¥");
 		}
 	}
 	private static void UpdateView() {
 		// TODO Auto-generated method stub
 		try {
 			Commodity commodity=new Commodity();
-			System.out.println("±àºÅ£º");
+			System.out.println("ç¼–å·ï¼š");
 			int id=new Scanner(System.in).nextInt();
 			commodity.setId(id);
-			System.out.println("ÊÇ·ñĞŞ¸ÄÃû³Æ");
+			System.out.println("æ˜¯å¦ä¿®æ”¹åç§°");
 			String s = new Scanner(System.in).next();
 			if(s.equalsIgnoreCase("y")) {
-				System.out.println("Ãû³Æ£º");
+				System.out.println("åç§°ï¼š");
 				String name = new Scanner(System.in).next();
 				commodity.setName(name);
 			}
-			System.out.println("ÊÇ·ñĞŞ¸Ä¿â´æ");
+			System.out.println("æ˜¯å¦ä¿®æ”¹åº“å­˜");
 			 s = new Scanner(System.in).next();
 			if(s.equalsIgnoreCase("y")) {
-				System.out.println("¿â´æ£º");
+				System.out.println("åº“å­˜ï¼š");
 				int number  = new Scanner(System.in).nextInt();
 				commodity.setNumber(number);
 			}
-			System.out.println("ÊÇ·ñĞŞ¸Ä¼Û¸ñ");
+			System.out.println("æ˜¯å¦ä¿®æ”¹ä»·æ ¼");
 			 s = new Scanner(System.in).next();
 			if(s.equalsIgnoreCase("y")) {
-				System.out.println("¼Û¸ñ£º");
+				System.out.println("ä»·æ ¼ï¼š");
 				Double price  = new Scanner(System.in).nextDouble();
 				commodity.setPrice(price);
 			}
 			boolean b = dd.update(commodity);
 			if(b) {
-				System.out.println("ĞŞ¸Ä³É¹¦");
+				System.out.println("ä¿®æ”¹æˆåŠŸ");
 			}else {
-			System.out.println("ĞŞ¸ÄÊ§°Ü");
+			System.out.println("ä¿®æ”¹å¤±è´¥");
 			}
 			}catch (Exception e) {
 				e.printStackTrace();
@@ -217,17 +217,17 @@ public class CommodityView {
 	private static void AddView() {
 		// TODO Auto-generated method stub
 		try {
-			System.out.println("ÇëÊäÈëÉÌÆ·Ãû³Æ£º");
+			System.out.println("è¯·è¾“å…¥å•†å“åç§°ï¼š");
 			String name=new Scanner(System.in).next();
-			System.out.println("ÇëÊäÈëÉÌÆ·ÊıÁ¿£º");
+			System.out.println("è¯·è¾“å…¥å•†å“æ•°é‡ï¼š");
 			int number=new Scanner(System.in).nextInt();
-			System.out.println("ÇëÊäÈëÉÌÆ·¼Û¸ñ£º");
+			System.out.println("è¯·è¾“å…¥å•†å“ä»·æ ¼ï¼š");
 			Double price=new Scanner(System.in).nextDouble();
 			boolean b = dd.add(new Commodity(name, number, price));
 			if(b) {
-				System.out.println("Ìí¼Ó³É¹¦");
+				System.out.println("æ·»åŠ æˆåŠŸ");
 			}else {
-				System.out.println("Ìí¼ÓÊ§°Ü");
+				System.out.println("æ·»åŠ å¤±è´¥");
 			}
 		}catch (Exception e) {
 			e.printStackTrace();

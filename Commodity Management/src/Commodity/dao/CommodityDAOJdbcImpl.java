@@ -9,7 +9,7 @@ public class CommodityDAOJdbcImpl implements CommodityDAO {
 	JdbcOperation<Commodity> jo = new JdbcOperation<Commodity>();
 
 	@Override
-	public boolean add(Commodity commodity) { // Ìí¼ÓÉÌÆ··½·¨
+	public boolean add(Commodity commodity) { // æ·»åŠ å•†å“æ–¹æ³•
 		if (commodity.getNumber() < 0 || commodity.getPrice() < 0) {
 		} else {
 			String sql = "insert into commodity values(null,?,?,?)";
@@ -20,17 +20,17 @@ public class CommodityDAOJdbcImpl implements CommodityDAO {
 	}
 
 	@Override
-	public boolean delete(Integer id) { // ÉÌÆ·É¾³ı
+	public boolean delete(Integer id) { // å•†å“åˆ é™¤
 		String sql = "delete from commodity where id=?";
 		Object[] objs = { id };
 		return jo.UpdateSql(sql, objs);
 	}
 
 	@Override
-	public boolean update(Commodity obj) { // ĞŞ¸ÄÉÌÆ·
+	public boolean update(Commodity obj) { // ä¿®æ”¹å•†å“
 		// TODO Auto-generated method stub
 		Commodity commodity = this.findOne(obj.getId());
-		if (obj.getName() != null) { // ÅĞ¿Õ
+		if (obj.getName() != null) { // åˆ¤ç©º
 			commodity.setName(obj.getName());
 		}
 		if (obj.getNumber() != null) {
@@ -39,14 +39,14 @@ public class CommodityDAOJdbcImpl implements CommodityDAO {
 		if (obj.getPrice() != null) {
 			commodity.setPrice(obj.getPrice());
 		}
-		String sql = "update commodity set Name=?,Number=?,Price=? where id=?"; // sqlÓï¾äÏÔÊ¾ÉÌÆ·µÄĞÅÏ¢
+		String sql = "update commodity set Name=?,Number=?,Price=? where id=?"; // sqlè¯­å¥æ˜¾ç¤ºå•†å“çš„ä¿¡æ¯
 		Object[] objs = { commodity.getName(), commodity.getNumber(), commodity.getPrice(), commodity.getId() };
 		return jo.UpdateSql(sql, objs);
 
 	}
 
 	@Override
-	public Commodity findOne(Integer id) { // ²éÑ¯Ò»¸öÉÌÆ·
+	public Commodity findOne(Integer id) { // æŸ¥è¯¢ä¸€ä¸ªå•†å“
 		// TODO Auto-generated method stub
 		String sql = "select * from commodity where id=?";
 		Object[] objs = { id };
@@ -55,7 +55,7 @@ public class CommodityDAOJdbcImpl implements CommodityDAO {
 	}
 
 	@Override
-	public List<Commodity> findAll() { // ²éÕÒËùÓĞµÄÉÌÆ·
+	public List<Commodity> findAll() { // æŸ¥æ‰¾æ‰€æœ‰çš„å•†å“
 		// TODO Auto-generated method stub
 		String sql = "select * from commodity";
 		Object[] objs = {};
@@ -63,14 +63,14 @@ public class CommodityDAOJdbcImpl implements CommodityDAO {
 	}
 
 	@Override
-	public boolean num(Commodity comm) { // ÓÃ»§¹ºÂòºó¿â´æ¼õÉÙÒ»¸öµÄ·½·¨
+	public boolean num(Commodity comm) { // ç”¨æˆ·è´­ä¹°ååº“å­˜å‡å°‘ä¸€ä¸ªçš„æ–¹æ³•
 		String sql = "UPDATE commodity set number=(" + comm.getNumber() + "-1) where id=" + comm.getId();
 		Object[] objs = {};
 		return jo.UpdateSql(sql, objs);
 	}
 
 	@Override
-	public List findname(String str) { // Ê¹ÓÃÃû×ÖÄ£ºı²éÑ¯
+	public List findname(String str) { // ä½¿ç”¨åå­—æ¨¡ç³ŠæŸ¥è¯¢
 		String sql = "select * from commodity where name like ?";
 		Object[] objs = { "%" + str + "%" };
 		return jo.seleList(sql, objs, Commodity.class);

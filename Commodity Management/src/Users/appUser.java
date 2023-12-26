@@ -4,8 +4,8 @@ import Login.view.LoginView;
 import Users.view.UserView;
 
 /*
- * ����ר���û���¼֮��Ľ���
- * ʵ���û���¼�����ܿ����Ĳ˵�ҳ��
+ * 测试专用用户登录之后的界面
+ * 实现用户登录后所能看到的菜单页面
  */
 
 public class appUser {

@@ -11,11 +11,11 @@ import java.util.List;
 
 public class IOUtils {
 
-	public static void write(List list, File file) { // Ğ´Èë
-		ObjectOutputStream oos = null; // ¶¨ÒåÒ»¸öObjectOutputStream¶ÔÏó£¬ÓÃÓÚ½«¶ÔÏóĞ´Èëµ½ÎÄ¼şÖĞ
+	public static void write(List list, File file) { // å†™å…¥
+		ObjectOutputStream oos = null; // å®šä¹‰ä¸€ä¸ªObjectOutputStreamå¯¹è±¡ï¼Œç”¨äºå°†å¯¹è±¡å†™å…¥åˆ°æ–‡ä»¶ä¸­
 		try {
-			oos = new ObjectOutputStream(new FileOutputStream(file)); // ´´½¨Ò»¸öĞÂµÄObjectOutputStream¶ÔÏó£¬ÒÔÖ¸¶¨µÄFileOutputStreamÎª²ÎÊı£¬ÕâÑù¿ÉÒÔ½«¶ÔÏóĞ´Èëµ½Ö¸¶¨µÄÎÄ¼şÖĞ
-			oos.writeObject(list); // ½«List¶ÔÏóĞ´Èëµ½ObjectOutputStreamÖĞ£¬ÒÔ±ã¿ÉÒÔ½«Æä±£´æµ½ÎÄ¼şÖĞ
+			oos = new ObjectOutputStream(new FileOutputStream(file)); // åˆ›å»ºä¸€ä¸ªæ–°çš„ObjectOutputStreamå¯¹è±¡ï¼Œä»¥æŒ‡å®šçš„FileOutputStreamä¸ºå‚æ•°ï¼Œè¿™æ ·å¯ä»¥å°†å¯¹è±¡å†™å…¥åˆ°æŒ‡å®šçš„æ–‡ä»¶ä¸­
+			oos.writeObject(list); // å°†Listå¯¹è±¡å†™å…¥åˆ°ObjectOutputStreamä¸­ï¼Œä»¥ä¾¿å¯ä»¥å°†å…¶ä¿å­˜åˆ°æ–‡ä»¶ä¸­
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -29,12 +29,12 @@ public class IOUtils {
 		}
 	}
 
-	public static List read(File file) { // ¶ÁÈ¡
-		ObjectInputStream ois = null; // ¶¨ÒåÒ»¸öObjectInputStream¶ÔÏó£¬ÓÃÓÚ´ÓÎÄ¼şÖĞ¶ÁÈ¡¶ÔÏó
-		List list = new ArrayList(); // ¶¨ÒåÒ»¸öList¶ÔÏó£¬ÓÃÓÚ´æ´¢´ÓÎÄ¼şÖĞ¶ÁÈ¡µÄ¶ÔÏó
+	public static List read(File file) { // è¯»å–
+		ObjectInputStream ois = null; // å®šä¹‰ä¸€ä¸ªObjectInputStreamå¯¹è±¡ï¼Œç”¨äºä»æ–‡ä»¶ä¸­è¯»å–å¯¹è±¡
+		List list = new ArrayList(); // å®šä¹‰ä¸€ä¸ªListå¯¹è±¡ï¼Œç”¨äºå­˜å‚¨ä»æ–‡ä»¶ä¸­è¯»å–çš„å¯¹è±¡
 		try {
-			ois = new ObjectInputStream(new FileInputStream(file)); // ´´½¨Ò»¸öĞÂµÄObjectInputStream¶ÔÏó£¬ÒÔÖ¸¶¨µÄFileInputStreamÎª²ÎÊı£¬ÕâÑù¿ÉÒÔ´ÓÖ¸¶¨µÄÎÄ¼şÖĞ¶ÁÈ¡¶ÔÏó
-			list = (List) ois.readObject(); // ´ÓObjectInputStreamÖĞ¶ÁÈ¡Ò»¸ö¶ÔÏó£¬²¢Ç¿ÖÆ×ª»»ÎªListÀàĞÍ£¬È»ºó´æ´¢µ½list±äÁ¿ÖĞ
+			ois = new ObjectInputStream(new FileInputStream(file)); // åˆ›å»ºä¸€ä¸ªæ–°çš„ObjectInputStreamå¯¹è±¡ï¼Œä»¥æŒ‡å®šçš„FileInputStreamä¸ºå‚æ•°ï¼Œè¿™æ ·å¯ä»¥ä»æŒ‡å®šçš„æ–‡ä»¶ä¸­è¯»å–å¯¹è±¡
+			list = (List) ois.readObject(); // ä»ObjectInputStreamä¸­è¯»å–ä¸€ä¸ªå¯¹è±¡ï¼Œå¹¶å¼ºåˆ¶è½¬æ¢ä¸ºListç±»å‹ï¼Œç„¶åå­˜å‚¨åˆ°listå˜é‡ä¸­
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -23,14 +23,15 @@ public class UserView {
 	private static UsersDAO ud = new UsersDAOJdbcImpl();
 
 	public static void menu(Users users) {
-		System.out.println("1¡¢ĞŞ¸ÄĞÅÏ¢ÃÜÂë/Óà¶î³äÖµ");
-		System.out.println("2¡¢Í¨¹ıÉÌÆ·Ãû²éÕÒÉÌÆ·");
-		System.out.println("3¡¢²éÕÒËùÓĞÉÌÆ·");
-		System.out.println("4¡¢¹ºÂòÉÌÆ·");
-		System.out.println("5¡¢²éÑ¯¸öÈËĞÅÏ¢");
-		System.out.println("6¡¢ÍË³öµÇÂ¼");
-		System.out.println("7¡¢¹ØÓÚÎÒÃÇ");
-		System.out.println("0¡¢ÍË³öÏµÍ³");
+		System.out.println("**********è¿™é‡Œæ˜¯å•†å“å‰å°*********");
+		System.out.println("1ã€ä¿®æ”¹ä¿¡æ¯å¯†ç /ä½™é¢å……å€¼");
+		System.out.println("2ã€é€šè¿‡å•†å“åæŸ¥æ‰¾å•†å“");
+		System.out.println("3ã€æŸ¥æ‰¾æ‰€æœ‰å•†å“");
+		System.out.println("4ã€è´­ä¹°å•†å“");
+		System.out.println("5ã€æŸ¥è¯¢ä¸ªäººä¿¡æ¯");
+		System.out.println("6ã€é€€å‡ºç™»å½•");
+		System.out.println("7ã€å…³äºæˆ‘ä»¬");
+		System.out.println("0ã€é€€å‡ºç³»ç»Ÿ");
 		int select = new Scanner(System.in).nextInt();
 		switch (select) {
 		case 1:
@@ -51,7 +52,7 @@ public class UserView {
 		case 6:
 			LoginView.menu();
 		case 7:
-			System.out.println("¸ĞĞ»Ê¹ÓÃ£¬Èç¹ûÎÒµÄ×÷Æ·ÄÜ¹»°ïÖúµ½Äú£¬ÇëËæÒâ´òÉÍ¡£ÄúµÄÖ§³Ö½«¹ÄÀøÎÒ¼ÌĞø´´×÷");
+			System.out.println("æ„Ÿè°¢ä½¿ç”¨ï¼Œå¦‚æœæˆ‘çš„ä½œå“èƒ½å¤Ÿå¸®åŠ©åˆ°æ‚¨ï¼Œè¯·éšæ„æ‰“èµã€‚æ‚¨çš„æ”¯æŒå°†é¼“åŠ±æˆ‘ç»§ç»­åˆ›ä½œ");
 			ShowUtils.main(null);
 			break;
 		case 0:
@@ -65,11 +66,11 @@ public class UserView {
 	}
 
 	private static void printHead() {
-		System.out.println("ÉÌÆ·±àºÅ\tÉÌÆ·Ãû³Æ\tÉÌÆ·ÊıÁ¿\tÉÌÆ·¼Û¸ñ");
+		System.out.println("å•†å“ç¼–å·\tå•†å“åç§°\tå•†å“æ•°é‡\tå•†å“ä»·æ ¼");
 	}
 
 	private static void printHeads() {
-		System.out.println("ÓÃ»§id\tÓÃ»§êÇ³Æ\tÓÃ»§ÃÜÂë\tÓÃ»§Óà¶î");
+		System.out.println("ç”¨æˆ·id\tç”¨æˆ·æ˜µç§°\tç”¨æˆ·å¯†ç \tç”¨æˆ·ä½™é¢");
 	}
 
 	private static void printCommodity(Commodity commodity, int index) {
@@ -82,58 +83,58 @@ public class UserView {
 		System.out.println(one.getUid() + "\t" + one.getUname() + "\t" + one.getPassword() + "\t" + one.getBalance());
 	}
 
-	private static void findone(Users users) { // ÊµÏÖÓÃ»§ÏÔÊ¾×Ô¼ºµÄĞÅÏ¢
+	private static void findone(Users users) { // å®ç°ç”¨æˆ·æ˜¾ç¤ºè‡ªå·±çš„ä¿¡æ¯
 		printHeads();
 		printUsersss(users, 1);
 	}
 
-	private static void BuyView(Users users) { // ÓÃ»§¹ºÂòÁ÷³Ì=×Ô¼ºÓà¶î-ÉÌÆ·Óà¶î
+	private static void BuyView(Users users) { // ç”¨æˆ·è´­ä¹°æµç¨‹=è‡ªå·±ä½™é¢-å•†å“ä½™é¢
 		// TODO Auto-generated method stub
 		try {
 		Commodity comm = null;
 		Users us= null;
-			System.out.println("ÇëÊäÈëĞèÒª¹ºÂòµÄÉÌÆ·±àºÅ");
+			System.out.println("è¯·è¾“å…¥éœ€è¦è´­ä¹°çš„å•†å“ç¼–å·");
 			int id = new Scanner(System.in).nextInt();
 			comm = dd.findOne(id);
 			us=ud.findOne(users.getUid());
 			if(comm==null) {
-				System.out.println("ÄúÊäÈëµÄÉÌÆ·id²»´æÔÚ");
+				System.out.println("æ‚¨è¾“å…¥çš„å•†å“idä¸å­˜åœ¨");
 				return ;
 			}
 			if(us==null) {
-				System.out.println("ÇëÖØĞÂµÇÂ¼");
+				System.out.println("è¯·é‡æ–°ç™»å½•");
 				return;
 			}
-			if (comm!= null) { // ÅĞ¶ÏÉÌÆ·idÊÇ·ñ´æÔÚ
+			if (comm!= null) { // åˆ¤æ–­å•†å“idæ˜¯å¦å­˜åœ¨
 				printHead();
 				printCommodity(comm, 1);
 			} 
-			boolean buy = false; // Í¬²½ÊäÈë£¬±£Ö¤¹ºÂòËù¿Û³ıµÄ½ğ¶îºÍÉÌÆ·¿â´æÍ¬Ê±±»¼õÈ¥
+			boolean buy = false; // åŒæ­¥è¾“å…¥ï¼Œä¿è¯è´­ä¹°æ‰€æ‰£é™¤çš„é‡‘é¢å’Œå•†å“åº“å­˜åŒæ—¶è¢«å‡å»
 			boolean num = false;
-			System.out.println("ÄúÒª¹ºÂòµÄÎª" + comm.getName());
-			System.out.println("ÊÇ·ñÈ·ÈÏ¹ºÂò´ËÉÌÆ·£¨y/n£©");
+			System.out.println("æ‚¨è¦è´­ä¹°çš„ä¸º" + comm.getName());
+			System.out.println("æ˜¯å¦ç¡®è®¤è´­ä¹°æ­¤å•†å“ï¼ˆy/nï¼‰");
 			String s = new Scanner(System.in).next();
 			if (s.equalsIgnoreCase("y")) {
 				if (us.getBalance()>=comm.getPrice()) {
 					
 					System.out.println(us.getBalance());
-					buy = ud.buy(us, comm); // ÅĞ¶ÏÓà¶îÊÇ·ñ´óÓÚµ±Ç°ÉÌÆ·½ğ¶î
+					buy = ud.buy(us, comm); // åˆ¤æ–­ä½™é¢æ˜¯å¦å¤§äºå½“å‰å•†å“é‡‘é¢
 				} else {
-					System.out.println("Óà¶î²»×ã£¬²»³äÇ®ÊÇÏë°×æÎÂğ");
+					System.out.println("ä½™é¢ä¸è¶³ï¼Œä¸å……é’±æ˜¯æƒ³ç™½å«–å—");
 					ShowUtils.main(null);
 				}
-				if (comm.getNumber() > 1) { // ¿â´æ-1
+				if (comm.getNumber() > 1) { // åº“å­˜-1
 					num = dd.num(comm);
 
 				} else {
-					System.out.println("¿â´æ²»×ã");
+					System.out.println("åº“å­˜ä¸è¶³");
 				}
-				if (buy && num) { // Í¬²½ÊäÈëÏÔÊ¾¹ºÂòÊÇ·ñ³É¹¦£¬±£Ö¤¹ºÂòËù¿Û³ıµÄ½ğ¶îºÍÉÌÆ·¿â´æÍ¬Ê±±»¼õÈ¥
-					System.out.println("¹ºÂò³É¹¦");
+				if (buy && num) { // åŒæ­¥è¾“å…¥æ˜¾ç¤ºè´­ä¹°æ˜¯å¦æˆåŠŸï¼Œä¿è¯è´­ä¹°æ‰€æ‰£é™¤çš„é‡‘é¢å’Œå•†å“åº“å­˜åŒæ—¶è¢«å‡å»
+					System.out.println("è´­ä¹°æˆåŠŸ");
 					ud.unum(us);
-					System.out.println("Äú¹ºÂòÁË" + ud.unumber(us) + "´ÎÉÌÆ·");
+					System.out.println("æ‚¨è´­ä¹°äº†" + ud.unumber(us) + "æ¬¡å•†å“");
 				} else {
-					System.out.println("¹ºÂòÊ§°Ü");
+					System.out.println("è´­ä¹°å¤±è´¥");
 				}
 			}
 		} catch (Exception e) {
@@ -142,7 +143,7 @@ public class UserView {
 		}
 	}
 
-	private static void FindAllView() { // ÓÃ»§²éÕÒÈ«²¿ÉÌÆ·
+	private static void FindAllView() { // ç”¨æˆ·æŸ¥æ‰¾å…¨éƒ¨å•†å“
 		// TODO Auto-generated method stub
 		List<Commodity> list = dd.findAll();
 		printHead();
@@ -151,9 +152,9 @@ public class UserView {
 		}
 	}
 
-	private static void FindOneView() { // ÓÃ»§Í¨¹ıid²éÕÒÒ»¸öÉÌÆ·
+	private static void FindOneView() { // ç”¨æˆ·é€šè¿‡idæŸ¥æ‰¾ä¸€ä¸ªå•†å“
 		// TODO Auto-generated method stub
-		System.out.println("ÉÌÆ·Ãû£º");
+		System.out.println("å•†å“åï¼š");
 		String name = new Scanner(System.in).next();
 		List<Commodity> findname = dd.findname(name);
 		if (findname.size() != 0) {
@@ -163,32 +164,32 @@ public class UserView {
 						+ commodity.getPrice());
 			}
 		} else {
-			System.out.println("ÔİÎŞ·ûºÏµÄÉÌÆ·");
+			System.out.println("æš‚æ— ç¬¦åˆçš„å•†å“");
 		}
 
 	}
 
-	private static void UpdateView(Users users) { // ÒÑµÇÂ¼ÓÃ»§ĞèÒªĞŞ¸ÄêÇ³ÆºÍ³äÖµ½ğ¶îµÄ·½·¨µ÷ÓÃ
+	private static void UpdateView(Users users) { // å·²ç™»å½•ç”¨æˆ·éœ€è¦ä¿®æ”¹æ˜µç§°å’Œå……å€¼é‡‘é¢çš„æ–¹æ³•è°ƒç”¨
 		// TODO Auto-generated method stub
 		try {
-			System.out.println("ÊÇ·ñĞŞ¸ÄêÇ³Æ");
+			System.out.println("æ˜¯å¦ä¿®æ”¹æ˜µç§°");
 			String s = new Scanner(System.in).next();
 			if (s.equalsIgnoreCase("y")) {
-				System.out.println("êÇ³Æ£º");
+				System.out.println("æ˜µç§°ï¼š");
 				String uname = new Scanner(System.in).next();
 				users.setUname(uname);
 			}
-			System.out.println("ÊÇ·ñĞŞ¸ÄÃÜÂë");
+			System.out.println("æ˜¯å¦ä¿®æ”¹å¯†ç ");
 			String ss = new Scanner(System.in).next();
 			if (ss.equalsIgnoreCase("y")) {
-				System.out.println("ÃÜÂë£º");
+				System.out.println("å¯†ç ï¼š");
 				String password = new Scanner(System.in).next();
 				users.setPassword(password);
 			}
-			System.out.println("ÊÇ·ñ³äÖµÓà¶î");
+			System.out.println("æ˜¯å¦å……å€¼ä½™é¢");
 			s = new Scanner(System.in).next();
 			if (s.equalsIgnoreCase("y")) {
-				System.out.println("½ğ¶î£º");
+				System.out.println("é‡‘é¢ï¼š");
 				Double balance = new Scanner(System.in).nextDouble();
 				ShowUtils.main(null);
 				Users oldusers=ud.findOne(users.getUid());
@@ -196,9 +197,9 @@ public class UserView {
 			}
 			boolean b = ud.update(users);
 			if (b) {
-				System.out.println("³äÖµĞŞ¸Ä³É¹¦");
+				System.out.println("å……å€¼ä¿®æ”¹æˆåŠŸ");
 			} else {
-				System.out.println("³äÖµĞŞ¸ÄÊ§°Ü");
+				System.out.println("å……å€¼ä¿®æ”¹å¤±è´¥");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

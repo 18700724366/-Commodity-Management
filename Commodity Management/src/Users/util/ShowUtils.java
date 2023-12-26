@@ -8,13 +8,13 @@ public class ShowUtils {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-				ImageIcon image = new ImageIcon("bin/Users/util/ma.jpg");
+				ImageIcon image = new ImageIcon("src/Users/util/ma.jpg");
 				JLabel imageLabel = new JLabel(image);
 				imageLabel.setBounds(500, 200, 500, 1000);
 				JFrame j = new JFrame();
-				j.setTitle("Çë¸¶¿î");
+				j.setTitle("è¯·ä»˜æ¬¾");
 				j.setBounds(800, 100, 1000, 800);
-				//Ìí¼ÓJLabel×é¼þ
+				//æ·»åŠ JLabelç»„ä»¶
 				j.add(imageLabel);
 				j.setVisible(true);
 			}

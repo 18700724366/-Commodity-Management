@@ -16,14 +16,14 @@ public interface UsersDAO {
 
 	List<Users> findAll();
 
-	boolean login(Users users); // 登录方法
+	boolean login(Users users); // 鐧诲綍鏂规硶
 
 	boolean unum(Users users);
 
-	Integer unumber(Users users); // 查找商品数量
+	Integer unumber(Users users); // 鏌ユ壘鍟嗗搧鏁伴噺
 
-	boolean buy(Users users, Commodity comm); // 购买商品后的用户金额会减去单个商品的金额
+	boolean buy(Users users, Commodity comm); // 璐拱鍟嗗搧鍚庣殑鐢ㄦ埛閲戦浼氬噺鍘诲崟涓晢鍝佺殑閲戦
 
-	Integer findid(Users users); // 查找用户id
+	Integer findid(Users users); // 鏌ユ壘鐢ㄦ埛id
 
 }

@@ -3,11 +3,11 @@ package Users.entity;
 import java.io.Serializable;
 
 public class Users implements Serializable {
-	private Integer uid; // ÓÃ»§id
-	private String uname; // ÓÃ»§Ãû
-	private String password; // ÃÜÂë
-	private Integer unumber; // ÓÃ»§¹ºÂòÊıÁ¿
-	private Double balance; // ÓÃ»§¹ºÂòÉÌÆ·µÄ¼Û¸ñ
+	private Integer uid; // ç”¨æˆ·id
+	private String uname; // ç”¨æˆ·å
+	private String password; // å¯†ç 
+	private Integer unumber; // ç”¨æˆ·è´­ä¹°æ•°é‡
+	private Double balance; // ç”¨æˆ·è´­ä¹°å•†å“çš„ä»·æ ¼
 
 	public Integer getUid() {
 		return uid;

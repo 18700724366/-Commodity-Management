@@ -26,7 +26,7 @@ public class UsersDAOJdbcImpl implements UsersDAO {
 	}
 
 	@Override
-	public boolean add(Users users) { // ÓÃ»§×¢²á
+	public boolean add(Users users) { // ç”¨æˆ·æ³¨å†Œ
 		// TODO Auto-generated method stub
 		try {
 
@@ -45,14 +45,14 @@ public class UsersDAOJdbcImpl implements UsersDAO {
 	}
 
 	@Override
-	public boolean unum(Users users) { // ÓÃ»§¹ºÂò³É¹¦ºóÍ³¼ÆÊıÁ¿+1
+	public boolean unum(Users users) { // ç”¨æˆ·è´­ä¹°æˆåŠŸåç»Ÿè®¡æ•°é‡+1
 		String sql = "UPDATE users set unumber=(" + users.getUnumber() + "+1) where uid=" + users.getUid();
 		Object[] objs = {};
 		return jo.UpdateSql(sql, objs);
 	}
 
 	@Override
-	public Integer unumber(Users users) { // ÓÃ»§¹ºÂòºóµÄÍ³¼ÆÊı¾İ¸üĞÂ
+	public Integer unumber(Users users) { // ç”¨æˆ·è´­ä¹°åçš„ç»Ÿè®¡æ•°æ®æ›´æ–°
 		String sql = "select * from users where uid=" + users.getUid();
 		Object[] objs = {};
 		List<Users> seleList = jo.seleList(sql, objs, Users.class);
@@ -60,7 +60,7 @@ public class UsersDAOJdbcImpl implements UsersDAO {
 	}
 
 	@Override
-	public boolean buy(Users users, Commodity comm) { // ¹ºÂòÉÌÆ·ºóµÄÓÃ»§½ğ¶î»á¼õÈ¥µ¥¸öÉÌÆ·µÄ½ğ¶î
+	public boolean buy(Users users, Commodity comm) { // è´­ä¹°å•†å“åçš„ç”¨æˆ·é‡‘é¢ä¼šå‡å»å•ä¸ªå•†å“çš„é‡‘é¢
 		String sql = "UPDATE users set balance=(" + users.getBalance() + "-" + comm.getPrice() + ") where uid="
 				+ users.getUid();
 		Object[] objs = {};
@@ -68,7 +68,7 @@ public class UsersDAOJdbcImpl implements UsersDAO {
 	}
 
 	@Override
-	public boolean delete(Integer id) { // ÓÃ»§×¢Ïú
+	public boolean delete(Integer id) { // ç”¨æˆ·æ³¨é”€
 		// TODO Auto-generated method stub
 		String sql = "delete from users where uid=?";
 		Object[] objs = { id };
@@ -76,7 +76,7 @@ public class UsersDAOJdbcImpl implements UsersDAO {
 	}
 
 	@Override
-	public boolean update(Users obj) { // ÓÃ»§ĞŞ¸Äµ±Ç°ÓÃ»§µÇÂ¼ºóµÄĞÅÏ¢£¬³äÖµÌáÏÖÓà¶î
+	public boolean update(Users obj) { // ç”¨æˆ·ä¿®æ”¹å½“å‰ç”¨æˆ·ç™»å½•åçš„ä¿¡æ¯ï¼Œå……å€¼æç°ä½™é¢
 		// TODO Auto-generated method stub
 		Users users = this.findOne(obj.getUid());
 		if (obj.getUname() != null) {
@@ -91,7 +91,7 @@ public class UsersDAOJdbcImpl implements UsersDAO {
 	}
 
 	@Override
-	public Users findOne(Integer uid) { // ²éÕÒÒ»¸öÓÃ»§£¬Ö»ÄÜ¹ÜÀíÔ±µ÷ÓÃ
+	public Users findOne(Integer uid) { // æŸ¥æ‰¾ä¸€ä¸ªç”¨æˆ·ï¼Œåªèƒ½ç®¡ç†å‘˜è°ƒç”¨
 		String sql = "select * from users where uid=?";
 		Object[] objs = { uid };
 		List<Users> list = jo.seleList(sql, objs, Users.class);
@@ -99,7 +99,7 @@ public class UsersDAOJdbcImpl implements UsersDAO {
 	}
 
 	@Override
-	public List<Users> findAll() { // ²éÕÒÈ«²¿ÓÃ»§£¬Ö»ÄÜ¹ÜÀíÔ±µ÷ÓÃ
+	public List<Users> findAll() { // æŸ¥æ‰¾å…¨éƒ¨ç”¨æˆ·ï¼Œåªèƒ½ç®¡ç†å‘˜è°ƒç”¨
 		// TODO Auto-generated method stub
 		String sql = "select * from users";
 		Object[] objs = {};
@@ -107,7 +107,7 @@ public class UsersDAOJdbcImpl implements UsersDAO {
 	}
 
 	@Override
-	public Integer findid(Users users) { // Í¨¹ıÓÃ»§Ãû²éÕÒÓÃ»§id
+	public Integer findid(Users users) { // é€šè¿‡ç”¨æˆ·åæŸ¥æ‰¾ç”¨æˆ·id
 		String sql = "select * from users where uname=?";
 		Object[] objs = { users.getUname() };
 		List<Users> list = jo.seleList(sql, objs, Users.class);

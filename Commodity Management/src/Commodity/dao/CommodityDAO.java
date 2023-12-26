@@ -5,17 +5,17 @@ import java.util.List;
 import Commodity.entity.Commodity;
 
 public interface CommodityDAO {
-	boolean add(Commodity obj); // Ìí¼ÓÉÌÆ·µÄ·½·¨
+	boolean add(Commodity obj); // æ·»åŠ å•†å“çš„æ–¹æ³•
 
-	boolean delete(Integer id); // É¾³ıÉÌÆ·
+	boolean delete(Integer id); // åˆ é™¤å•†å“
 
-	boolean update(Commodity obj); // ĞŞ¸ÄÉÌÆ·ĞÅÏ¢
+	boolean update(Commodity obj); // ä¿®æ”¹å•†å“ä¿¡æ¯
 
-	Commodity findOne(Integer id); // ²éÕÒÒ»¸öÉÌÆ·
+	Commodity findOne(Integer id); // æŸ¥æ‰¾ä¸€ä¸ªå•†å“
 
-	List<Commodity> findAll(); // ²éÕÒÈ«²¿ÉÌÆ·
+	List<Commodity> findAll(); // æŸ¥æ‰¾å…¨éƒ¨å•†å“
 
-	boolean num(Commodity comm); // ÓÃ»§¹ºÂòÒ»¸öºó¿â´æ-1µÄ·½·¨
+	boolean num(Commodity comm); // ç”¨æˆ·è´­ä¹°ä¸€ä¸ªååº“å­˜-1çš„æ–¹æ³•
 
-	List<Commodity> findname(String str); // ÓÃ»§Ä£ºı²éÑ¯ÉÌÆ·µÄ·½·¨
+	List<Commodity> findname(String str); // ç”¨æˆ·æ¨¡ç³ŠæŸ¥è¯¢å•†å“çš„æ–¹æ³•
 }
