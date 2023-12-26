@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/Commodity/Appbackstage.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Commodity/dao/CommodityDAO.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Commodity/dao/CommodityDAOJdbcImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Commodity/entity/Commodity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Commodity/util/IOUtils.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Commodity/util/JdbcOperation.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Commodity/util/JdbcUtils.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Commodity/view/CommodityView.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Login/AppLogin.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Login/view/LoginView.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Users/appUser.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Users/dao/UsersDAO.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Users/dao/UsersDAOJdbcImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Users/entity/Users.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Users/util/IOUtils.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Users/util/JdbcOperation.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Users/util/JdbcUtils.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Users/util/ShowUtils.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/Users/view/UserView.java" charset="UTF-8" />
+    <file url="PROJECT" charset="GBK" />
+  </component>
+</project>
